@@ -16,18 +16,19 @@ import { NavBreadcrumbs, InfoPane, Message } from "./CentrePane";
  * Top level App component.
  */
 const App = () => {
-  return (
-    <Router>
-      <Route path="/"
-        render={
-          ({ location }) => {
-            return <TestRunner url={location.pathname} />;
-          }
-        }
-      />
-    </Router>
-  );
-};
+    <Text style={styles.title}>PTS TestFramework</Text>
+      return (
+        <Router>
+          <Route path="/"
+            render={
+              ({ location }) => {
+                return <TestRunner url={location.pathname} />;
+              }
+            }
+          />
+        </Router>
+      );
+    };
 
 interface TestRunnerProps {
   url: string | null,
