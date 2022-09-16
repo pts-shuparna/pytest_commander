@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import io from 'socket.io-client';
+import Title from './Title';
 import {
   HashRouter as Router,
   Route,
@@ -16,19 +17,19 @@ import { NavBreadcrumbs, InfoPane, Message } from "./CentrePane";
  * Top level App component.
  */
 const App = () => {
-    <Text style={styles.title}>PTS TestFramework</Text>
-      return (
-        <Router>
-          <Route path="/"
-            render={
-              ({ location }) => {
-                return <TestRunner url={location.pathname} />;
-              }
-            }
-          />
-        </Router>
-      );
-    };
+  return (
+  <Title>
+    <Router>
+      <Route path="/"
+        render={
+          ({ location }) => {
+            return <TestRunner url={location.pathname} />;
+          }
+        }
+      />
+    </Router>
+  );
+};
 
 interface TestRunnerProps {
   url: string | null,
