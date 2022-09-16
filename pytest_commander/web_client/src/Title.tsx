@@ -4,7 +4,7 @@ import './Title.css';
 function Title() {
   return (
     <div>
-      <h1>PTS Testing Framework</h1>
+      <h1>bla bla bla bla bla blaaa PTS Testing Framework</h1>
     </div>
   )
 }

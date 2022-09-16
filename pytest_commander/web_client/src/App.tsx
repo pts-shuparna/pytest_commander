@@ -18,7 +18,6 @@ import { NavBreadcrumbs, InfoPane, Message } from "./CentrePane";
  */
 const App = () => {
   return (
-  <Title>
     <Router>
       <Route path="/"
         render={
@@ -126,9 +125,9 @@ class TestRunner extends React.Component<TestRunnerProps, TestRunnerState> {
   render() {
     const selection = parseSelection(this.props.url);
 
-    if (this.state.loading) {
-      return <MessageDisplay message="Loading..." selection={selection} />;
-    }
+//     if (this.state.loading) {
+//       return <MessageDisplay message="Loading..." selection={selection} />;
+//     }
 
     if (this.state.errorMessage) {
       return (
@@ -146,6 +145,9 @@ class TestRunner extends React.Component<TestRunnerProps, TestRunnerState> {
       );
 
       return (
+        <div>
+        <h1><Title /></h1>
+        <div>
         <TestRunnerDisplay
           childBranches={childBranches}
           childLeaves={childLeaves}
@@ -153,6 +155,8 @@ class TestRunner extends React.Component<TestRunnerProps, TestRunnerState> {
           handleTestRun={this.handleTestRun}
           handleEnvToggle={this.handleEnvToggle}
         />
+        </div>
+        </div>
       );
     } catch (error) {
       if (error instanceof SelectionNotFound) {
