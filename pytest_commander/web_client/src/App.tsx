@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 import { StyleSheet, css } from "aphrodite";
 
-import { COLWIDTH, BranchNode, LeafNode } from "./Common";
+import { COLWIDTH, BranchNode, LeafNode, MEDIUM_GREY, LIGHT_GREY, PTS_BLUE } from "./Common";
 import { NavColumn } from "./NavColumn";
 import { NavBreadcrumbs, InfoPane, Message } from "./CentrePane";
 
@@ -146,8 +146,6 @@ class TestRunner extends React.Component<TestRunnerProps, TestRunnerState> {
 
       return (
         <div>
-        <h1><Title /></h1>
-        <div>
         <TestRunnerDisplay
           childBranches={childBranches}
           childLeaves={childLeaves}
@@ -155,7 +153,6 @@ class TestRunner extends React.Component<TestRunnerProps, TestRunnerState> {
           handleTestRun={this.handleTestRun}
           handleEnvToggle={this.handleEnvToggle}
         />
-        </div>
         </div>
       );
     } catch (error) {
@@ -213,7 +210,9 @@ const TestRunnerDisplay = (props: TestRunnerDisplayProps) => {
         handleTestRun={props.handleTestRun}
         handleEnvToggle={props.handleEnvToggle}
       />
+
       <div className={css(styles.centrePane)}>
+        <div className={css(steal.heading)}> <Title /> </div>
         <NavBreadcrumbs selection={props.selection} />
         <InfoPane selectedLeaf={selectedLeaf} />
       </div>
@@ -293,6 +292,18 @@ const styles = StyleSheet.create({
   centrePane: {
     "margin-left": COLWIDTH,
     padding: "10px 10px",
+  },
+});
+
+const steal = StyleSheet.create({
+  heading: {
+    "margin-left": "8em",
+    "margin-right": "8em",
+    alignItems: 'center',
+    textAlign: 'center',
+    padding: "10px 10px",
+    color: PTS_BLUE,
+    background: LIGHT_GREY,
   },
 });
 

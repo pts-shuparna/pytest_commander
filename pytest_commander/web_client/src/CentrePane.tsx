@@ -13,8 +13,10 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
 
-import { LeafNode, MEDIUM_GREY } from "./Common";
+import { LeafNode, MEDIUM_GREY, PTS_BLUE } from "./Common";
 import { css, StyleSheet } from 'aphrodite';
+// import Title from './Title';
+
 
 interface InfoPaneProps {
   selectedLeaf: LeafNode | null,
