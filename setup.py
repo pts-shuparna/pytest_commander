@@ -8,13 +8,13 @@ def main():
 
     setuptools.setup(
         name="pytest_commander",
-        version="2.7.0",
-        author="Ryan Collingham",
-        author_email="ryanc118@gmail.com",
+        version="0.0.1",
+        author="Shuparna Deb",
+        author_email="shuparna@pass-testing.de",
         description="An interactive GUI test runner for PyTest",
         long_description=long_description,
         long_description_content_type="text/markdown",
-        url="https://github.com/ryanc414/pytest_commander",
+        url="https://github.com/pts-shuparna/pytest_commander",
         packages=setuptools.find_packages(),
         classifiers=[
             "Programming Language :: Python :: 3",

@@ -18,8 +18,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react",
-    "noFallthroughCasesInSwitch": true,
-    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+    "noFallthroughCasesInSwitch": true
   },
   "include": [
     "src"
