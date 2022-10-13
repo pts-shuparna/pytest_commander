@@ -15,7 +15,7 @@ def main():
         long_description=long_description,
         long_description_content_type="text/markdown",
         url="https://github.com/pts-shuparna/pytest_commander",
-        packages=setuptools.find_packages(),
+        packages=setuptools.find_packages(include=['web_client']),
         classifiers=[
             "Programming Language :: Python :: 3",
             "License :: OSI Approved :: MIT License",
@@ -30,6 +30,9 @@ def main():
             "flask_socketio>=5.0.1, <6.0.0",
             "eventlet>=0.31.0, <1.0.0",
             "watchdog>=2.1.0, <3.0.0",
+        ],
+        dependency_links=[
+            'https://github.com/pts-shuparna/pytest_commander.git@webui_for_pytest#egg=pytest_commander'
         ],
         include_package_data=True,
         entry_points={
