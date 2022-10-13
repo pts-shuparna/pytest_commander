@@ -8,7 +8,7 @@ def main():
 
     setuptools.setup(
         name="pytest_commander",
-        version="0.0.1",
+        version="0.0.2",
         author="Shuparna Deb",
         author_email="shuparna@pass-testing.de",
         description="An interactive GUI test runner for PyTest",
