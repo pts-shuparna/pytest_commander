@@ -15,7 +15,7 @@ def main():
         long_description=long_description,
         long_description_content_type="text/markdown",
         url="https://github.com/pts-shuparna/pytest_commander",
-        packages=setuptools.find_packages(include=['web_client']),
+        packages=setuptools.find_packages(include=['pytest_commander']),
         classifiers=[
             "Programming Language :: Python :: 3",
             "License :: OSI Approved :: MIT License",
