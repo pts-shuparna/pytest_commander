@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import io from 'socket.io-client';
+import Title from './Title';
 import {
   HashRouter as Router,
   Route,
@@ -8,7 +9,7 @@ import {
 } from "react-router-dom";
 import { StyleSheet, css } from "aphrodite";
 
-import { COLWIDTH, BranchNode, LeafNode } from "./Common";
+import { COLWIDTH, BranchNode, LeafNode, LIGHT_GREY, PTS_BLUE } from "./Common";
 import { NavColumn } from "./NavColumn";
 import { NavBreadcrumbs, InfoPane, Message } from "./CentrePane";
 
@@ -124,9 +125,9 @@ class TestRunner extends React.Component<TestRunnerProps, TestRunnerState> {
   render() {
     const selection = parseSelection(this.props.url);
 
-    if (this.state.loading) {
-      return <MessageDisplay message="Loading..." selection={selection} />;
-    }
+//     if (this.state.loading) {
+//       return <MessageDisplay message="Loading..." selection={selection} />;
+//     }
 
     if (this.state.errorMessage) {
       return (
@@ -144,6 +145,7 @@ class TestRunner extends React.Component<TestRunnerProps, TestRunnerState> {
       );
 
       return (
+        <div>
         <TestRunnerDisplay
           childBranches={childBranches}
           childLeaves={childLeaves}
@@ -151,6 +153,7 @@ class TestRunner extends React.Component<TestRunnerProps, TestRunnerState> {
           handleTestRun={this.handleTestRun}
           handleEnvToggle={this.handleEnvToggle}
         />
+        </div>
       );
     } catch (error) {
       if (error instanceof SelectionNotFound) {
@@ -208,6 +211,7 @@ const TestRunnerDisplay = (props: TestRunnerDisplayProps) => {
         handleEnvToggle={props.handleEnvToggle}
       />
       <div className={css(styles.centrePane)}>
+        <div className={css(steal.heading)}> <Title /> </div>
         <NavBreadcrumbs selection={props.selection} />
         <InfoPane selectedLeaf={selectedLeaf} />
       </div>
@@ -287,6 +291,18 @@ const styles = StyleSheet.create({
   centrePane: {
     "margin-left": COLWIDTH,
     padding: "10px 10px",
+  },
+});
+
+const steal = StyleSheet.create({
+  heading: {
+    "margin-left": "8em",
+    "margin-right": "8em",
+    alignItems: 'center',
+    textAlign: 'center',
+    padding: "10px 10px",
+    color: PTS_BLUE,
+    background: LIGHT_GREY,
   },
 });
 

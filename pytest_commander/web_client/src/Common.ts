@@ -9,6 +9,7 @@
 //const ORANGE = '#FFA500';
 export const LIGHT_GREY = '#F3F3F3';
 export const MEDIUM_GREY = '#D0D0D0';
+export const PTS_BLUE = '#60DEFD';
 //const DARK_GREY = '#ADADAD';
 //const BLACK = '#404040';
 
